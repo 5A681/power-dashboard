@@ -59,14 +59,16 @@ export default function Sidebar() {
 
 			<nav className="menu" role="navigation">
 				<ul>
-					<li className="menu-item">
-						<button className="icon-btn" aria-hidden>
-							{/* Dashboard icon */}
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 13h8V3H3v10zM3 21h8v-6H3v6zM13 21h8V11h-8v10zM13 3v6h8V3h-8z" fill="currentColor"/></svg>
-						</button>
-						<span className="label">Dashboard</span>
+					<li className={`menu-item ${pathname === "/" ? "active" : ""}`}>
+						<Link href="/" className="menu-link">
+							<span className="icon-btn" aria-hidden>
+								{/* Dashboard icon */}
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 13h8V3H3v10zM3 21h8v-6H3v6zM13 21h8V11h-8v10zM13 3v6h8V3h-8z" fill="currentColor"/></svg>
+							</span>
+							<span className="label">Dashboard</span>
+						</Link>
 					</li>
-
+					
 					{/* Analytics: changed to a Link and active state */}
 					<li className={`menu-item ${pathname === "/analytics" ? "active" : ""}`}>
 						<Link href="/analytics" className="menu-link">

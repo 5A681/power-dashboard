@@ -115,21 +115,24 @@ export default function GridLine() {
 				.gridline-wrap {
 					display: flex;
 					align-items: center;
-					gap: 20px;
-					padding: 22px;
-					justify-content: center;
+					gap: 16px;
+					padding: 14px;
+					justify-content: space-between;
 					width: 100%;
+					max-width: 100%; /* allow full width of parent card */
+					margin: 0;
 					box-sizing: border-box;
 					background: linear-gradient(180deg, rgba(2,8,18,0.02), transparent);
+					flex-wrap: wrap; /* allow items to wrap on narrow screens */
 				}
 
 				/* Station */
 				.station {
-					width: 120px;
+					width: 92px; /* slightly smaller to fit */
 					display: flex;
 					flex-direction: column;
 					align-items: center;
-					gap: 10px;
+					gap: 8px;
 				}
 				.station-top {
 					width: 100%;
@@ -298,7 +301,7 @@ export default function GridLine() {
 					flex-direction: column;
 					align-items: center;
 					gap: 8px;
-					width: 84px;
+					width: 76px;
 				}
 				.sun {
 					position: relative;
@@ -354,10 +357,10 @@ export default function GridLine() {
 
 				/* Cable */
 				.cable {
-					flex: 1;
+					flex: 1 1 auto; /* allow grow and shrink */
 					height: 12px;
-					max-width: 420px;
-					min-width: 160px;
+					max-width: 100%;
+					min-width: 72px;
 					background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.02) 100%);
 					border-radius: 999px;
 					position: relative;
@@ -488,12 +491,12 @@ export default function GridLine() {
 				}
 
 				.dispatch {
-					flex: 1;
+					flex: 1 1 auto;
 					display: flex;
 					flex-direction: column;
-					gap: 12px;
+					gap: 8px;
 					justify-content: center;
-					max-width: 420px;
+					max-width: 100%;
 				}
 
 				.line-wrap {
@@ -548,7 +551,7 @@ export default function GridLine() {
 				}
 
 				.substation {
-					width: 110px;
+					width: 96px;
 					display:flex;
 					flex-direction:column;
 					align-items:center;
@@ -608,9 +611,9 @@ export default function GridLine() {
 				/* Small responsive tweaks */
 				@media (max-width: 760px) {
 					.gridline-wrap { gap: 12px; padding: 12px; }
-					.station { width: 96px; }
+					.station { width: 86px; }
 					.connector-arm { width: 48px; height:48px; }
-					.cable { min-width: 80px; max-width: 250px; }
+					.cable { min-width: 80px; max-width: 100%; }
 					.shell { width: 56px; height: 28px; }
 					.power-dispatch { flex-direction: column; align-items:center; gap:14px; }
 					.dispatch { max-width: 320px; }
