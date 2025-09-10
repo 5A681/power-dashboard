@@ -1,0 +1,17 @@
+services:
+  app:
+    # Build image from the repository Dockerfile (uses Bun-based Dockerfile)
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: power-dashboard:latest
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:3000/" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# Optional: add volumes or additional services (db, reverse-proxy) if needed
